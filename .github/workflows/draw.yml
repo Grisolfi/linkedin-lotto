@@ -23,4 +23,4 @@ jobs:
         run: |
           curl -s ${{ github.event.inputs.gist_url }} > reactions.html
       - name: Run extract.py
-        run: python extract.py ${{ github.event.inputs.gist_url }}
+        run: python extract.py
