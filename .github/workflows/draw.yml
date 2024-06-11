@@ -1,0 +1,26 @@
+name: Extract Gist
+
+on:
+  workflow_dispatch:
+    inputs:
+      gist_url:
+        description: 'Gist URL Containing Reactions Container HTML Content'
+        required: true
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install beautifulsoup4
+      - name: Get HMTL Content
+        run: |
+          curl -s ${{ github.event.inputs.gist_url }} > reactions.html
+      - name: Run extract.py
+        run: python extract.py ${{ github.event.inputs.gist_url }}
