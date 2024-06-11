@@ -29,4 +29,4 @@ Antes de executar o script de automação, é necessário seguir o passo-a-passo
 A automação contida em [extract.py](extract.py) realiza utiliza a biblioteca `beautifulsoup` para realizar uma extração dos nomes que reagiram a postagem extraída.  
 Para o sorteio, foi utilizada a biblioteca [secrets](https://docs.python.org/3/library/secrets.html).
 
-Para facilitar o re-uso, inseri um workflow com trigger manual (workflow_dispatch) e variável contendo a URL do Gist utilizado.
+Para facilitar o re-uso, inseri um [workflow](.github/workflows/draw.yml) com trigger manual (workflow_dispatch) e variável contendo a URL do Gist utilizado.
